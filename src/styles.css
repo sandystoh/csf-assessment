@@ -5,16 +5,15 @@ html, body {
     margin: 0;
 	padding: 0;
     border: 0;
-    width: 100vw;
-    font-size: 100%;
     position: absolute;
 	font: inherit;
     vertical-align: baseline;
     overflow: hidden;
+    overflow-x: hidden !important;
     overflow-y: auto;
+    width: 100vw !important;
 }
 body {
-    margin: 0; 
     font-family: 'Muli', sans-serif;
     background-color:#000;
     color: #fff;

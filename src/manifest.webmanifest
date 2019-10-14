@@ -1,11 +1,11 @@
 {
-  "name": "csf-assessment",
-  "short_name": "csf-assessment",
+  "name": "CSF Assessment",
+  "short_name": "CSF App",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/csf-assessment/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

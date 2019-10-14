@@ -1,3 +1,4 @@
+
 h2, h4, .center {
     width: 80vw;
     text-align: center;
@@ -7,7 +8,6 @@ h2, h4, .center {
 .confirm-area {
     width: 100vw;
     overflow-x: hidden;
-    padding: 5vw;
     font-family: 'Muli', sans-serif;
     font-size: 1rem;
     margin-right: 0;
@@ -15,7 +15,7 @@ h2, h4, .center {
  
  .form-card{
      width: 80vw;
-     margin-right: 0;
+     margin: 5vw;
      background-color: rgba(255,255,255,0.8);
  }
 
@@ -36,7 +36,9 @@ table, td {
     border: 1px dashed #666;
     padding: 10px;
     background: rgba(100,150,200,0.5);
-    min-width: 90%;
+    overflow-wrap: break-word !important;
+    max-width: 40vw !important;
+    word-break: break-all;
 }
 
 .pad {

@@ -33,11 +33,13 @@ export class FormComponent implements OnInit {
 
   countries: ICountry[] = [];
   contactForm: FormGroup;
+  startDate: any;
 
   constructor(private formBuilder: FormBuilder, private countrySvc: CountryService,
               private userSvc: UserService,
               private snackBar: MatSnackBar, private router: Router) {
     this.contactForm = this.createFormGroup();
+    this.startDate = moment();
   }
 
   ngOnInit() {

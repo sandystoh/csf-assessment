@@ -1,20 +1,19 @@
 .form-area {
     width: 100vw;
     overflow-x: hidden;
-    padding: 5vw;
     font-family: 'Muli', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-right: 0;
 }
  
  .form-card{
      width: 80vw;
+     margin: 5vw;
      background-color: rgba(255,255,255,0.8);
  }
  
  .full-width {
      width: 90%;
-     padding-left: 3%;
      font-family: 'Muli', sans-serif;
  }
  
@@ -48,10 +47,6 @@
  }
 
  @media only screen and (max-width: 500px) {
-    .form-area {
-        font-size: 1rem;
-    }
-
     .extra {
         margin-bottom: 30px;
     }

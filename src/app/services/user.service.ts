@@ -27,7 +27,7 @@ saveCurrentUser(user: User) {
     }
     reject();
   });
-  // In actuality, would not store password in local IndexedDB but use an Authentication Service
+  // In actuality, would not store password but use an Authentication Service
 }
 
 getCurrentUser(): User {
