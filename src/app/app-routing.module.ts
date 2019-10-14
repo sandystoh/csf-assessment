@@ -6,6 +6,7 @@ import { ConfirmComponent } from './components/confirm.component';
 const ROUTES: Routes = [
   { path: 'confirm', component: ConfirmComponent},
   { path: 'add', component: FormComponent},
+  { path: '', component: FormComponent},
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 

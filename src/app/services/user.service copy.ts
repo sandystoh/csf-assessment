@@ -7,8 +7,6 @@ import { User } from '../models/user';
 })
 export class UserService {
   db: any;
-// reset = {  name: '',  email: '',  password: '',  gender: '',  dob: '',  address: '',  contact: '',  country: '' };
-// currentUser: User = { ...this.reset };
 
   constructor() {
       this.db = new AppDb();
@@ -34,19 +32,5 @@ export class UserService {
   remove(id) {
   return this.db.users.delete(id);
   }
-
-/*
-resetCurrent() {
-  this.currentUser = { ...this.reset };
-}
-
-saveCurrentUser(user: User) {
-  this.currentUser = user;
-}
-
-getCurrentUser(): User {
-  return this.currentUser;
-}
-*/
 }
 

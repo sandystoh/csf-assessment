@@ -17,6 +17,10 @@ h2, h4, .center {
     font-size: 1.1rem;
 }
 
+.hint {
+    font-size: 0.8rem !important;
+}
+
  .form-card{
      width: 80vw;
      margin: 5vw;

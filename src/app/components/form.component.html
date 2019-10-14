@@ -14,7 +14,7 @@
               <mat-radio-button value="Male">Male</mat-radio-button>
               <mat-radio-button value="Female">Female</mat-radio-button>
               </div>
-              <mat-hint *ngIf="contactForm.touched && f.gender.errors?.required">Please input your Gender</mat-hint>
+              <mat-hint class="hint" *ngIf="contactForm.touched && f.gender.errors?.required">Please input your Gender</mat-hint>
           </mat-radio-group>
           </div>
 
@@ -41,7 +41,7 @@
       
 
       <mat-form-field class="full-width">
-        <input matInput readonly [matDatepicker]="dob" [max]="startDate" placeholder="Date of Birth" formControlName="dob" >
+        <input matInput readonly [matDatepicker]="dob" [max]="maxDate" placeholder="Date of Birth" formControlName="dob" >
         <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
         <mat-datepicker #dob></mat-datepicker>
         <mat-hint *ngIf="contactForm.touched && f.dob.errors?.required">Please input your Date of Birth</mat-hint>
@@ -49,28 +49,28 @@
       </mat-form-field>
 
       <mat-form-field class="full-width">
+        <mat-label>Select Country</mat-label>
+        <mat-select name="country" formControlName="country">
+          <mat-option *ngFor="let country of countries" value="{{country.name}}">
+            {{country.name}} ({{country.code}})
+          </mat-option>
+        </mat-select>
+        <mat-hint *ngIf="contactForm.touched && f.country.errors?.required">Please enter your Country</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
         <input matInput placeholder="Address" formControlName="address">
         <mat-hint *ngIf="contactForm.touched && f.address.errors?.required">Please input your Address</mat-hint>
         </mat-form-field>
 
-      <mat-form-field class="full-width">
+      <mat-form-field class="full-width  extra">
         <input matInput type="contact" placeholder="Contact No." formControlName="contact">
         <mat-hint *ngIf="contactForm.touched && f.contact.errors?.required">Please enter your Contact No.</mat-hint>
         <mat-error *ngIf="contactForm.touched && f.contact.errors?.pattern">Please enter a valid Contact No. (only numbers, +, - and brackets)</mat-error>
       </mat-form-field>
-  
-      <mat-form-field class="full-width extra">
-              <mat-label>Select Country</mat-label>
-              <mat-select name="country" formControlName="country">
-                <mat-option *ngFor="let country of countries" value="{{country.name}}">
-                  {{country.name}}
-                </mat-option>
-              </mat-select>
-              <mat-hint *ngIf="contactForm.touched && f.country.errors?.required">Please enter your Country</mat-hint>
-      </mat-form-field>
-    
+
       <div  class="full-width" fxLayout="row" fxLayoutAlign="space-around">
-      <button mat-raised-button class="submit-button" color="warn" type="reset" (click)="reset()">Cancel</button>
+      <button mat-raised-button class="submit-button" color="warn" type="reset" (click)="reset()">Reset</button>
       <button mat-raised-button class="submit-button" color="accent" button type="submit" [disabled]="contactForm.invalid">Add User</button>
       </div>
     </form>

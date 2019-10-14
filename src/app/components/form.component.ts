@@ -8,14 +8,15 @@ import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 
 function ageValidator(min: number): ValidatorFn {
+  // validates minimum age passed in as 'min'
   return (control: AbstractControl): {[key: string]: any} | null => {
     const age = moment().diff(control.value, 'years');
-    console.log('age', age);
     return age < min ? {ageValidation: {value: control.value}} : null;
   };
 }
 
 export const matchPassword: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
+  // Validates if password and re-entered password are the same
   const password = control.get('password');
   const reEnter = control.get('password2');
   if (password.value !== '' && reEnter.value !== '' ) {
@@ -33,19 +34,20 @@ export class FormComponent implements OnInit {
 
   countries: ICountry[] = [];
   contactForm: FormGroup;
-  startDate: any;
+  maxDate: any;
 
   constructor(private formBuilder: FormBuilder, private countrySvc: CountryService,
               private userSvc: UserService,
               private snackBar: MatSnackBar, private router: Router) {
     this.contactForm = this.createFormGroup();
-    this.startDate = moment();
+    this.maxDate = moment();
+    // Also can limit DatePicker to 18 years ago using moment().subtract(18, 'years');
   }
 
   ngOnInit() {
     this.countrySvc.getAll().then( res => this.countries = res)
     .catch(err => {
-      console.log('API Error');
+      console.log('API Error'); // Fallback array in case of API error due to CORS
       this.countries = [{name: 'Singapore', code: 'SG'}, {name: 'USA', code: 'US'}, {name: 'France', code: 'FR'}];
     });
   }
@@ -54,7 +56,9 @@ export class FormComponent implements OnInit {
 
   createFormGroup() {
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#\$])/; // (?=.{8,})/;
+    // passwordPattern validates for Uppercase/Lowercase/Digit/Symbol. minlength validator validates length
     const contactPattern = /^[0-9\+\-\)\(]*$/;
+    // contactPattern validates only digits, () + and - can be entered
 
     return new FormGroup({
       name: new FormControl('', [Validators.required]),
@@ -88,8 +92,8 @@ export class FormComponent implements OnInit {
       country: val.country
     };
     this.userSvc.saveCurrentUser(save).then( res => {
-      this.router.navigate(['/confirm'], {fragment: 'main'});
       this.snackBar.open('New User ' + this.contactForm.value.name + ' Added!', 'OK', { duration: 2000});
+      this.router.navigate(['/confirm'], {fragment: 'main'});
       console.log(save);
     }).catch((error) => {
       console.log(error);

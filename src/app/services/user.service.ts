@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AppDb } from './app-db';
 import { User } from '../models/user';
 import * as moment from 'moment';
 
