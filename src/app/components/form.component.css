@@ -1,18 +1,18 @@
 .form-area {
-    width: 100vw;
     padding: 5vw;
     font-family: 'Muli', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-right: 0;
 }
  
  .form-card{
-     width: 85vw;
+     width: 80vw;
      background-color: rgba(255,255,255,0.8);
  }
  
  .full-width {
      width: 90%;
+     padding-left: 3%;
      font-family: 'Muli', sans-serif;
  }
  

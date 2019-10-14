@@ -2,28 +2,51 @@
     <mat-card class="form-card">
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="full-width">
-      <input matInput placeholder="First Name" formControlName="firstName" id="firstName">
-      <mat-hint *ngIf="contactForm.touched && f.firstName.errors?.required">Please input a First Name</mat-hint>
+      <input matInput placeholder="Name" formControlName="name" id="name">
+      <mat-hint *ngIf="contactForm.touched && f.name.errors?.required">Please input your Name</mat-hint>
       </mat-form-field>
-      <mat-form-field class="full-width">
-      <input matInput placeholder="Last Name" formControlName="lastName">
-      <mat-hint *ngIf="contactForm.touched && f.lastName.errors?.required">Please input a Last Name</mat-hint>
-      <mat-error *ngIf="contactForm.touched && f.lastName.errors?.pattern">Please input a valid Last Name!</mat-error>
-      </mat-form-field>
+
       <mat-form-field class="full-width">
       <input matInput placeholder="Email" formControlName="email">
-      <mat-hint *ngIf="contactForm.touched && f.email.errors?.required">Please input an Email</mat-hint>
+      <mat-hint *ngIf="contactForm.touched && f.email.errors?.required">Please input your Email</mat-hint>
       <mat-error *ngIf="contactForm.touched && f.email.errors?.email">Please input a valid email!</mat-error>
       </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput type="custom" placeholder="Custom" formControlName="custom">
-        <mat-hint *ngIf="contactForm.touched && f.custom.errors?.required">Custom field is required</mat-hint>
-        <mat-error *ngIf="contactForm.touched && f.custom.errors?.ageRange">Custom Validator Triggered</mat-error>
-      </mat-form-field>
+
       <mat-form-field class="full-width">
       <input matInput type="password" placeholder="Password" formControlName="password">
       <mat-hint *ngIf="contactForm.touched && f.password.errors?.required">Password is required</mat-hint>
-      <mat-error *ngIf="contactForm.touched && f.password.errors?.minlength">Password must be at least 6 characters</mat-error>
+      <mat-error *ngIf="contactForm.touched && f.password.errors?.minlength">Password must be at least 8 characters</mat-error>
+      <mat-error *ngIf="contactForm.touched && f.password.errors?.pattern">Password must have at least 1 uppercase, 1 lowercase, 1 digit and 1 special character (@,#,$)</mat-error>
+      </mat-form-field>
+
+      <div class="full-width" fxLayout="row" fxLayoutAlign="" fxLayoutGap="2vw">
+        <label for="gender">Gender:</label>
+        <mat-radio-group name="gender" id="gender" formControlName="gender">
+            <div fxLayout="row" fxLayoutAlign="" fxLayoutGap="2vw">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            </div>
+            <mat-hint *ngIf="contactForm.touched && f.gender.errors?.required">Please input your Gender</mat-hint>
+        </mat-radio-group>
+        </div>
+
+      <mat-form-field class="full-width">
+        <input matInput readonly [matDatepicker]="dob" [max]="startDate" placeholder="Date of Birth" formControlName="dob" >
+        <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+        <mat-datepicker #dob></mat-datepicker>
+        <mat-hint *ngIf="contactForm.touched && f.dob.errors?.required">Please input your Date of Birth</mat-hint>
+        <mat-error *ngIf="contactForm.touched && f.dob.errors">Age must be at least 18</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Address" formControlName="address">
+        <mat-hint *ngIf="contactForm.touched && f.address.errors?.required">Please input your Address</mat-hint>
+        </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput type="contact" placeholder="Contact No." formControlName="contact">
+        <mat-hint *ngIf="contactForm.touched && f.contact.errors?.required">Please enter your Contact No.</mat-hint>
+        <mat-error *ngIf="contactForm.touched && f.contact.errors?.pattern">Please enter a valid Contact No. (only numbers, +, - and brackets)</mat-error>
       </mat-form-field>
   
       <mat-form-field class="full-width">
@@ -33,11 +56,11 @@
                   {{country}}
                 </mat-option>
               </mat-select>
-              <mat-hint *ngIf="contactForm.touched && f.country.errors?.required">Country is required</mat-hint>
+              <mat-hint *ngIf="contactForm.touched && f.country.errors?.required">Please enter your Country</mat-hint>
       </mat-form-field>
     
       <div  class="full-width" fxLayout="row">
-      <button mat-raised-button class="full-width" color="warn" (click)="cancel()">Cancel</button>
+      <button mat-raised-button class="full-width" color="warn" type="reset" (click)="reset()">Cancel</button>
       <button mat-raised-button class="full-width" color="accent" button type="submit" [disabled]="contactForm.invalid">Add User</button>
       </div>
     </form>
