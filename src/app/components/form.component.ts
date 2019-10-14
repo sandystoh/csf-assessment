@@ -57,8 +57,8 @@ export class FormComponent implements OnInit {
   createFormGroup() {
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#\$])/; // (?=.{8,})/;
     // passwordPattern validates for Uppercase/Lowercase/Digit/Symbol. minlength validator validates length
-    const contactPattern = /^[0-9\+\-\)\(]*$/;
-    // contactPattern validates only digits, () + and - can be entered
+    const contactPattern = /^[0-9\+\-\)\( ]*$/;
+    // contactPattern validates only digits, () + - and a space can be entered
 
     return new FormGroup({
       name: new FormControl('', [Validators.required]),

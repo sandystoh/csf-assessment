@@ -66,7 +66,7 @@
       <mat-form-field class="full-width  extra">
         <input matInput type="contact" placeholder="Contact No." formControlName="contact">
         <mat-hint *ngIf="contactForm.touched && f.contact.errors?.required">Please input your Contact No.</mat-hint>
-        <mat-error *ngIf="contactForm.touched && f.contact.errors?.pattern">Please input a valid Contact No. (only numbers, +, - and brackets)</mat-error>
+        <mat-error *ngIf="contactForm.touched && f.contact.errors?.pattern">Please input a valid Contact No. (only numbers, +, -, space and brackets)</mat-error>
       </mat-form-field>
 
       <div  class="full-width" fxLayout="row" fxLayoutAlign="space-around">
