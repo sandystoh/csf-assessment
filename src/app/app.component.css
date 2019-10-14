@@ -2,7 +2,7 @@
     background-color: lightblue;
     background-image: url('../assets/images/cloud-background.jpg');
     min-height: 100vh;
-    height: 100%;
+    width: 100vw;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,8 +29,8 @@ a:visited {
 
 .header {
     margin: auto;
-    height: 50vh;
-    width: 70vw;
+    height: 60vh;
+    width: 100%;
     font-weight: 900;
     font-size: 2.5rem;
     color: #fff;
@@ -54,3 +54,8 @@ a:visited {
     border: 2px solid #ffc107;
 }
 
+@media only screen and (max-width: 500px) {
+    .block{
+        height: 800px;
+    }
+  }

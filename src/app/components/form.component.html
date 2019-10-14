@@ -59,9 +59,9 @@
               <mat-hint *ngIf="contactForm.touched && f.country.errors?.required">Please enter your Country</mat-hint>
       </mat-form-field>
     
-      <div  class="full-width" fxLayout="row">
-      <button mat-raised-button class="full-width" color="warn" type="reset" (click)="reset()">Cancel</button>
-      <button mat-raised-button class="full-width" color="accent" button type="submit" [disabled]="contactForm.invalid">Add User</button>
+      <div  class="full-width" fxLayout="row" fxLayoutAlign="space-around">
+      <button mat-raised-button class="submit-button" color="warn" type="reset" (click)="reset()">Cancel</button>
+      <button mat-raised-button class="submit-button" color="accent" button type="submit" [disabled]="contactForm.invalid">Add User</button>
       </div>
     </form>
   </mat-card>

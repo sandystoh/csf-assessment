@@ -10,7 +10,8 @@ html, body {
     position: absolute;
 	font: inherit;
     vertical-align: baseline;
-    overflow-x: hidden;
+    overflow: hidden;
+    overflow-y: auto;
 }
 body {
     margin: 0; 

@@ -1,4 +1,6 @@
 .form-area {
+    width: 100vw;
+    overflow-x: hidden;
     padding: 5vw;
     font-family: 'Muli', sans-serif;
     font-size: 1.1rem;
@@ -17,7 +19,7 @@
  }
  
  .submit-button {
-     width: 20vw;
+     min-width: 20vw;
  }
  
  .mat-hint {
@@ -33,24 +35,9 @@
      width: 90%;
      text-align: center;
  }
- 
- .first-half{
-     width: 40vw;
- }
- 
- .second-half{
-     width: 40vw;
- }
- 
+
  @media only screen and (max-width: 500px) {
-     .first-half{
-         width: 80vw;
-     }
-     .second-half{
-         width: 80vw;
-     }
-   }
- 
- input[disabled] {
-     color: #005B96;
+    .form-area {
+        font-size: 1rem;
+    }
   }
