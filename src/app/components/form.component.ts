@@ -94,7 +94,8 @@ export class FormComponent implements OnInit {
     this.userSvc.saveCurrentUser(save).then( res => {
       this.snackBar.open('New User ' + this.contactForm.value.name + ' Added!', 'OK', { duration: 2000});
       this.router.navigate(['/confirm'], {fragment: 'main'});
-      console.log(save);
+      console.log('User Information Saved', save);
+      // To show information sent to persist, password would normally be masked
     }).catch((error) => {
       console.log(error);
     });

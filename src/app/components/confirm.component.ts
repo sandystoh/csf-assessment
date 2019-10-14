@@ -14,7 +14,7 @@ export class ConfirmComponent implements OnInit {
   constructor(private userSvc: UserService, private router: Router) { }
 
   ngOnInit() {
-    this.user = this.userSvc.getCurrentUser();
+    this.user = this.userSvc.getCurrentUserNoPassword();
   }
 
 }
