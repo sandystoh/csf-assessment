@@ -1,0 +1,18 @@
+<div class="fixed-bg">
+  <mat-toolbar>
+          <a class="home"  [routerLink]="['/']">
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="1vw">
+              <img src="assets/images/user-icon.gif" height="40px"> 
+              <div>Angular Learners</div>
+          </div></a>
+  </mat-toolbar>
+  <div class="header">Angular Learners<br>
+    <!-- <button mat-raised-button color="accent" [routerLink]="['/list']" fragment="main">List</button> -->
+    <button mat-raised-button color="accent" [routerLink]="['/add']" fragment="main">Sign Up</button>
+  </div>
+  <a id="main">
+   <div class="block">
+  <router-outlet></router-outlet>
+  </div>
+  </a>
+</div>

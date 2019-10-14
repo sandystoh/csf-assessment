@@ -1,0 +1,56 @@
+.form-area {
+    width: 100vw;
+    padding: 5vw;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.2rem;
+    margin-right: 0;
+}
+ 
+ .form-card{
+     width: 85vw;
+     background-color: rgba(255,255,255,0.8);
+ }
+ 
+ .full-width {
+     width: 90%;
+     font-family: 'Muli', sans-serif;
+ }
+ 
+ .submit-button {
+     width: 20vw;
+ }
+ 
+ .mat-hint {
+     color: red;
+     font-size: 0.9em;
+ }
+ 
+ .mat-button-toggle-checked{
+     background-color: rgb(255,193,7,0.8);
+ }
+ 
+ .center{
+     width: 90%;
+     text-align: center;
+ }
+ 
+ .first-half{
+     width: 40vw;
+ }
+ 
+ .second-half{
+     width: 40vw;
+ }
+ 
+ @media only screen and (max-width: 500px) {
+     .first-half{
+         width: 80vw;
+     }
+     .second-half{
+         width: 80vw;
+     }
+   }
+ 
+ input[disabled] {
+     color: #005B96;
+  }

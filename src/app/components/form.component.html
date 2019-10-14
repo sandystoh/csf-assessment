@@ -1,0 +1,45 @@
+<div class="form-area">
+    <mat-card class="form-card">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+      <input matInput placeholder="First Name" formControlName="firstName" id="firstName">
+      <mat-hint *ngIf="contactForm.touched && f.firstName.errors?.required">Please input a First Name</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+      <input matInput placeholder="Last Name" formControlName="lastName">
+      <mat-hint *ngIf="contactForm.touched && f.lastName.errors?.required">Please input a Last Name</mat-hint>
+      <mat-error *ngIf="contactForm.touched && f.lastName.errors?.pattern">Please input a valid Last Name!</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+      <input matInput placeholder="Email" formControlName="email">
+      <mat-hint *ngIf="contactForm.touched && f.email.errors?.required">Please input an Email</mat-hint>
+      <mat-error *ngIf="contactForm.touched && f.email.errors?.email">Please input a valid email!</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="custom" placeholder="Custom" formControlName="custom">
+        <mat-hint *ngIf="contactForm.touched && f.custom.errors?.required">Custom field is required</mat-hint>
+        <mat-error *ngIf="contactForm.touched && f.custom.errors?.ageRange">Custom Validator Triggered</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+      <input matInput type="password" placeholder="Password" formControlName="password">
+      <mat-hint *ngIf="contactForm.touched && f.password.errors?.required">Password is required</mat-hint>
+      <mat-error *ngIf="contactForm.touched && f.password.errors?.minlength">Password must be at least 6 characters</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+              <mat-label>Select Country</mat-label>
+              <mat-select name="country" formControlName="country">
+                <mat-option *ngFor="let country of countries" value="country">
+                  {{country}}
+                </mat-option>
+              </mat-select>
+              <mat-hint *ngIf="contactForm.touched && f.country.errors?.required">Country is required</mat-hint>
+      </mat-form-field>
+    
+      <div  class="full-width" fxLayout="row">
+      <button mat-raised-button class="full-width" color="warn" (click)="cancel()">Cancel</button>
+      <button mat-raised-button class="full-width" color="accent" button type="submit" [disabled]="contactForm.invalid">Add User</button>
+      </div>
+    </form>
+  </mat-card>
+  </div>
