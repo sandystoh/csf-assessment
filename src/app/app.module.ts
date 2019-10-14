@@ -16,11 +16,13 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 
 import { FormComponent } from './components/form.component';
 import { CountryService } from './services/country.service';
+import { ConfirmComponent } from './components/confirm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,

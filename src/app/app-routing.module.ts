@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormComponent } from './components/form.component';
+import { ConfirmComponent } from './components/confirm.component';
 
 const ROUTES: Routes = [
+  { path: 'confirm', component: ConfirmComponent},
   { path: 'add', component: FormComponent},
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

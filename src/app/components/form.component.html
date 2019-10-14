@@ -1,5 +1,3 @@
-{{ contactForm.errors | json}}
-
 <div class="form-area">
     <mat-card class="form-card">
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
@@ -63,7 +61,7 @@
       <mat-form-field class="full-width extra">
               <mat-label>Select Country</mat-label>
               <mat-select name="country" formControlName="country">
-                <mat-option *ngFor="let country of countries" value="country.name">
+                <mat-option *ngFor="let country of countries" value="{{country.name}}">
                   {{country.name}}
                 </mat-option>
               </mat-select>

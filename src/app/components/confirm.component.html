@@ -1,0 +1,24 @@
+<div class="confirm-area">
+<mat-card class="form-card">
+<h2>Thank you! Your Registration is Successful!</h2>
+<div  *ngIf = "user">
+    <table>
+    <tbody>
+        <tr><td>ID:</td><td class="info">{{user.id}}</td></tr>    
+        <tr><td>Name:</td><td class="info">{{user.name}}</td></tr>
+        <tr><td>Email:</td><td class="info">{{user.email}}</td></tr>
+        <tr><td>Date of Birth:</td><td class="info">{{ user.dob }}</td></tr>
+        <tr><td>Gender:</td><td class="info">{{ user.gender }}</td></tr>
+        <tr><td>Address:</td><td class="info">{{ user.address}}</td></tr>
+        <tr><td>Country:</td><td class="info">{{ user.country}}</td></tr>
+        <tr><td>Contact No.:</td><td class="info">{{ user.contact}}</td></tr>
+        <tr><td>Registration Date:</td><td class="info">{{ user.regDate }}</td></tr>
+   </tbody>
+    </table>
+</div>
+
+<div class="center pad">
+        <button mat-raised-button color="accent" [routerLink]="['/']">Back Home</button>
+</div>
+</mat-card>
+</div>
