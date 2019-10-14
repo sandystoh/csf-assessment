@@ -2,10 +2,21 @@
     width: 100vw;
     overflow-x: hidden;
     font-family: 'Muli', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-right: 0;
 }
+
+h2, h4, .center {
+    width: 80vw;
+    text-align: center;
+    font-family: 'Muli', sans-serif;
+}
  
+.shift {
+    padding-left: 5vw;
+    font-size: 1.1rem;
+}
+
  .form-card{
      width: 80vw;
      margin: 5vw;
@@ -44,10 +55,11 @@
      font-size: 0.8rem;
      color: red;
      margin-top: 0;
+     padding-left: 5vw;
  }
 
  @media only screen and (max-width: 500px) {
     .extra {
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
   }

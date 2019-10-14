@@ -44,7 +44,10 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.countrySvc.getAll().then( res => this.countries = res)
-    .catch(err => console.log(err) );
+    .catch(err => {
+      console.log('API Error');
+      this.countries = [{name: 'Singapore', code: 'SG'}, {name: 'USA', code: 'US'}, {name: 'France', code: 'FR'}];
+    });
   }
 
   get f() { return this.contactForm.controls; }

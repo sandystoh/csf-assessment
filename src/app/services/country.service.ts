@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { map, flatMap, toArray } from 'rxjs/operators';
 
-export const API = 'http://ec2-13-229-233-153.ap-southeast-1.compute.amazonaws.com:3000/countries';
+export const API = 'https://cors-anywhere.herokuapp.com/http://ec2-13-229-233-153.ap-southeast-1.compute.amazonaws.com:3000/countries';
 
 export interface ICountry {
   name: string;
