@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 
 import { FormComponent } from './components/form.component';
 import { CountryService } from './services/country.service';
@@ -30,7 +31,8 @@ import { CountryService } from './services/country.service';
     ReactiveFormsModule,
     HttpClientModule,
     MaterialModule ,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ShowHidePasswordModule
   ],
   providers: [CountryService],
   bootstrap: [AppComponent]
